@@ -7,7 +7,7 @@ import './DicomECGViewport.css';
 
 // TODO: Should probably use dcmjs for this
 const SOP_CLASS_UIDS = {
-  Sop12LeadECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.1', // Actualmente solo funciona con este.
+  Sop12LeadECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.1', //Only found.
   GeneralECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.2',
   AmbulatoryECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.3',
   HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1',
@@ -61,7 +61,7 @@ class DicomECGViewport extends Component {
     }
   }
 
-  //Al actualizar el elemento:
+  //On update element:
   componentDidUpdate(prevProps) {
     const { displaySet } = this.props.viewportData;
     const prevDisplaySet = prevProps.viewportData.displaySet;
@@ -85,20 +85,18 @@ class DicomECGViewport extends Component {
     };
 
     let id = 'myWaveform' + this.props.viewportIndex;
-    //Render principal element:
+    //Render principal view:
     return (
       <div style={divStyleCanvas}>
-        <div className="loader"></div>
         <div id={id} />
       </div>
     );
   }
 
-  //METODS:
+  //Methods:
   //-----------------------------------------------------------------------
   loadInstance() {
     let index = this.props.viewportIndex;
-    //Quito dicomweb de la url del dcm:
     var oReq = new XMLHttpRequest();
     oReq.open('get', this.props.viewportData.displaySet.wadoUri, true);
     oReq.responseType = 'arraybuffer';
@@ -111,32 +109,59 @@ class DicomECGViewport extends Component {
           //Load view:
           DicomECGViewport.createInstanceObject(dataSet, index);
         } else {
-          //Error:
+          //No load view:
         }
       }
     };
     oReq.send();
   }
 
-  //Load elements ECG:
-  static addDOMChart(chartId, index) {
+  //Loac ECG:
+  static async addDOMChart(chartId, index) {
     let id = 'myWaveform' + index;
     document.getElementById(id).innerHTML += '<div id="' + chartId + '"></div>';
   }
 
-  static createInstanceObject(dataSet, index) {
+  static async createInstanceObject(dataSet, index) {
+    //Loader:
+    let id = 'myWaveform' + index;
+    document.getElementById(id).innerHTML = '<div class="loader"></div>'; //Clear
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
     //make the image based on whether it is color or not
     var sopClassUID = dataSet.string('x00080016');
     switch (sopClassUID) {
       case SOP_CLASS_UIDS.HemodynamicWaveformStorage: //Hemodynamic Waveform Storage
+        DicomECGViewport.nocompatible(index);
+        break;
       case SOP_CLASS_UIDS.AmbulatoryECGWaveformStorage: //Ambulatory
+        DicomECGViewport.nocompatible(index);
+        break;
       case SOP_CLASS_UIDS.GeneralECGWaveformStorage: //General ECG Waveform Storage
+        DicomECGViewport.nocompatible(index);
+        break;
       case SOP_CLASS_UIDS.Sop12LeadECGWaveformStorage: //12-lead ECG Waveform Storage
         DicomECGViewport.Sop12LeadECGWaveform(dataSet, sopClassUID, index);
         break;
       default:
         console.log('Unsupported SOP Class UID: ' + sopClassUID);
     }
+  }
+
+  //No compatible ECG
+  static nocompatible(index) {
+    let id = 'myWaveform' + index;
+    DicomECGViewport.removeLoader();
+    document.getElementById(id).innerHTML =
+      '<h1 style="vertical-align: center;text-align: center;">ECG NO COMPATIBLE</h1>';
+  }
+
+  //Remove loader:
+  static removeLoader() {
+    let load = Array.from(document.getElementsByClassName('loader'));
+    load.forEach(element => {
+      element.remove();
+    });
   }
 
   static bindChart(chartId, channelData, yAxis) {
@@ -533,11 +558,8 @@ class DicomECGViewport extends Component {
       }
     }
 
-    //Remove loading:
-    let load = Array.from(document.getElementsByClassName('loader'));
-    load.forEach(element => {
-      element.remove();
-    });
+    //Cleal loader:
+    DicomECGViewport.removeLoader();
   }
   //-----------------------------------------------------------------------
 }
