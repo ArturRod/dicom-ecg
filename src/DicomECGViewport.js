@@ -76,18 +76,10 @@ class DicomECGViewport extends Component {
 
   //Render view:
   render() {
-    //Pongo scroll:
-    const divStyleCanvas = {
-      background: 'white',
-      height: '100%',
-      width: '100%',
-      overflow: 'auto',
-    };
-
     let id = 'myWaveform' + this.props.viewportIndex;
     //Render principal view:
     return (
-      <div style={divStyleCanvas}>
+      <div className="waveform">
         <div id={id} />
       </div>
     );
