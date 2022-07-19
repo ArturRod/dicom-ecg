@@ -8,3 +8,9 @@ Currently it works:</br>
   <li><strong>AmbulatoryECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.3', --> NO SUPPORT</strong></li>
   <li><strong>HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1', --> NO SUPPORT</strong></li>
 </ul>
+
+<h3>Installation</h3>
+<ol>
+  <li>Add files on @ohif/extensions</li>
+  <li>Import OHIFDicomECGExtension from '@ohif/extension-dicom-ecg'; in @ohif/platform/viewer/src/index.js</li>
+  <li>Finally in dependencies add "c3": "^0.7.20"</li>
