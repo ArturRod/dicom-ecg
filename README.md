@@ -14,3 +14,6 @@ Currently it works:</br>
   <li>Add files on @ohif/extensions</li>
   <li>Import OHIFDicomECGExtension from '@ohif/extension-dicom-ecg'; in @ohif/platform/viewer/src/index.js</li>
   <li>Finally in dependencies add "c3": "^0.7.20"</li>
+</ol>
+
+<h3>Results</h3>
