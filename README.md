@@ -13,7 +13,7 @@ Currently it works:</br>
 <ol>
   <li>Add files on @ohif/extensions</li>
   <li>Import OHIFDicomECGExtension from '@ohif/extension-dicom-ecg'; in @ohif/platform/viewer/src/index.js</li>
-  <li>Finally in dependencies add "c3": "^0.7.20"</li>
+  <li>Finally in dependencies add "c3": "^0.7.20" in package.json OHIF project, and update whit npm install</li>
 </ol>
 
 <h3>Results</h3>
