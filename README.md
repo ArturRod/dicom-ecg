@@ -2,6 +2,7 @@
 Extension to view electrocardiograms at https://github.com/OHIF Viewer.</br>
 Thanks to the author https://github.com/jap1968 in his project https://github.com/jap1968/dcm-waveform since it is an adaptation of what has been done.</br>
 Currently it works:</br>
+Tested in OHIF version 4.12.25 onwards</br>
 <ul>
   <li><strong>Sop12LeadECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.1', --> YES</strong></li>
   <li><strong>GeneralECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.2', --> NO SUPPORT</strong></li>
@@ -14,7 +15,6 @@ Currently it works:</br>
   <li>Add files on @ohif/extensions</li>
   <li>Import OHIFDicomECGExtension from '@ohif/extension-dicom-ecg'; in @ohif/platform/viewer/src/index.js</li>
   <li>Finally in dependencies add "c3": "^0.7.20" in package.json OHIF project, and update whit npm install</li>
-  <li>Tested in OHIF version 4.12.25 onwards</li>
 </ol>
 
 <h3>Results</h3>
