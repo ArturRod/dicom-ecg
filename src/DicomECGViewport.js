@@ -7,10 +7,10 @@ import './DicomECGViewport.css';
 
 // TODO: Should probably use dcmjs for this
 const SOP_CLASS_UIDS = {
-  Sop12LeadECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.1', //Only found.
-  GeneralECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.2',
-  AmbulatoryECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.3',
-  HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1',
+  Sop12LeadECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.1', //YES
+  GeneralECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.2', //YES
+  AmbulatoryECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.3', //NO
+  HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1', //NO
 };
 
 class DicomECGViewport extends Component {
@@ -40,9 +40,9 @@ class DicomECGViewport extends Component {
     useNative: false,
   };
 
-  //Cuando carga el componente:
+  //Load Component:
   async componentDidMount() {
-    //Saco el elemento activo:
+    //Element enable:
     const {
       //viewportData,
       setViewportActive,
@@ -50,7 +50,7 @@ class DicomECGViewport extends Component {
       activeViewportIndex,
     } = this.props;
 
-    //Activa la vista en caso de no estar activada:
+    //Enable viewport:
     if (viewportIndex !== activeViewportIndex) {
       setViewportActive(viewportIndex);
     }
@@ -130,10 +130,10 @@ class DicomECGViewport extends Component {
         DicomECGViewport.nocompatible(index);
         break;
       case SOP_CLASS_UIDS.GeneralECGWaveformStorage: //General ECG Waveform Storage
-        DicomECGViewport.nocompatible(index);
+        DicomECGViewport.Sop12LeadGeneralECGWaveform(dataSet, sopClassUID, index);
         break;
       case SOP_CLASS_UIDS.Sop12LeadECGWaveformStorage: //12-lead ECG Waveform Storage
-        DicomECGViewport.Sop12LeadECGWaveform(dataSet, sopClassUID, index);
+        DicomECGViewport.Sop12LeadGeneralECGWaveform(dataSet, sopClassUID, index);
         break;
       default:
         console.log('Unsupported SOP Class UID: ' + sopClassUID);
@@ -261,8 +261,8 @@ class DicomECGViewport extends Component {
     return code;
   }
 
-  //Load Sop12LeadECGWaveform:
-  static Sop12LeadECGWaveform(dataSet, sopClassUID, index) {
+  //Load Sop12Lead and General ECGWaveform:
+  static Sop12LeadGeneralECGWaveform(dataSet, sopClassUID, index) {
     console.log('SOP Class UID: ' + sopClassUID);
     //Structure: Waveform - Multiplex - channel - sample
     var waveform = {};
