@@ -19,4 +19,3 @@ Currently it works:</br>
 
 <h3>Results</h3>
 <img src="https://user-images.githubusercontent.com/86238895/179733736-843699c2-9527-4a68-8e3f-bc841bcd1346.png" />
-![image](https://user-images.githubusercontent.com/86238895/179733736-843699c2-9527-4a68-8e3f-bc841bcd1346.png)
