@@ -13,6 +13,7 @@ Currently it works:</br>
 <a href="https://github.com/ArturRod/dicom-ecg/blob/main/INSTALLATION.md"><strong>Installation Guide</strong></a>
 
 <h3>Results</h3>
-<img src="https://user-images.githubusercontent.com/86238895/181749060-27ff0696-a090-41db-84dd-9fa3bd7dfd73.png" />
+<img src="https://user-images.githubusercontent.com/86238895/181750762-2f1b451a-aa0f-4cda-b4e5-a0be9284fb90.png" />
+
 <h3>Features</h3>
 Generate the graph instead of using the c3 library (since it takes time to load), generate a canvas with the most personalized graph and actions such as scrolling or others.
