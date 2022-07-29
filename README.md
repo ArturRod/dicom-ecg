@@ -17,3 +17,6 @@ Currently it works:</br>
 
 <h3>Features</h3>
 Generate the graph instead of using the c3 library (since it takes time to load), generate a canvas with the most personalized graph and actions such as scrolling or others.
+
+<a href="https://github.com/OHIF/Viewers/pull/2854"><strong>OHIF VIEWER - ECG</strong></a>
+
