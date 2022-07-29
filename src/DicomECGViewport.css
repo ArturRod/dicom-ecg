@@ -6,6 +6,16 @@
   fill: none;
   stroke: #000; }
 
+  /*-- Color line --*/
+path.c3-shape.c3-shape.c3-line {
+    stroke: black !important;
+}
+
+/*-- Width Lines Delimitation --*/
+path.domain {
+  stroke-width: 1.5px;
+}
+
 .c3 text {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -14,6 +24,9 @@
 .c3-legend-item-tile, .c3-xgrid-focus, .c3-ygrid, .c3-event-rect, .c3-bars path {
   shape-rendering: crispEdges; }
 
+.c3-legend-item-tile {
+  stroke: #000 !important;
+}
 .c3-chart-arc path {
   stroke: #fff; }
 
@@ -37,9 +50,11 @@
   fill: #808080;
   font-size: 2em; }
 
-/*-- Line --*/
+/*-- Line x/y --*/
 .c3-line {
-  stroke-width: 1px; }
+  stroke-width: 2px;
+  fill: red;
+}
 
 /*-- Point --*/
 .c3-circle._expanded_ {
@@ -139,6 +154,16 @@
   dominant-baseline: middle;
   font-size: 1.3em; }
 
+
+.c3-xgrid-line line {
+    stroke: #D65656;
+}
+
+.c3-ygrid-line line {
+    stroke: #D65656;
+}
+
+
 .c3-chart-arcs .c3-chart-arcs-background {
   fill: #e0e0e0;
   stroke: none; }
@@ -158,7 +183,7 @@
   /*  font-size: 28px !important;*/ }
 
 .waveform{
-  background: white;
+  background: #F9F8F2;
   height: 100%;
   width: 100%;
   overflow: auto;
