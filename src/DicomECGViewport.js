@@ -88,24 +88,8 @@ class DicomECGViewport extends Component {
   //Methods:
   //-----------------------------------------------------------------------
   loadInstance() {
-    let index = this.props.viewportIndex;
-    var oReq = new XMLHttpRequest();
-    oReq.open('get', this.props.viewportData.displaySet.wadoUri, true);
-    oReq.responseType = 'arraybuffer';
-    oReq.onreadystatechange = function(oEvent) {
-      if (oReq.readyState === 4) {
-        if (oReq.status == 200) {
-          var dicomPart10AsArrayBuffer = oReq.response;
-          var byteArray = new Uint8Array(dicomPart10AsArrayBuffer);
-          var dataSet = dicomParser.parseDicom(byteArray);
-          //Load view:
-          DicomECGViewport.createInstanceObject(dataSet, index);
-        } else {
-          //No load view:
-        }
-      }
-    };
-    oReq.send();
+    var dataSet = dicomParser.parseDicom(this.props.byteArray);
+    DicomECGViewport.createInstanceObject(dataSet, this.props.viewportIndex);
   }
 
   //Loac ECG:

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import OHIF from '@ohif/core';
 import OHIFComponentPlugin from './OHIFComponentPlugin.js';
 import DicomECGViewport from './DicomECGViewport';
+
+const { DicomLoaderService } = OHIF.utils;
 
 class OHIFDicomECGViewport extends Component {
   static propTypes = {
@@ -14,7 +17,7 @@ class OHIFDicomECGViewport extends Component {
   };
 
   state = {
-    rawEcg: false,
+    byteArray: null,
     error: false,
   };
 
@@ -28,6 +31,28 @@ class OHIFDicomECGViewport extends Component {
     console.log('DicomECGViewport destroy()');
   }
 
+  //Load byteArray:
+  componentDidMount() {
+    const { displaySet, studies } = this.props.viewportData;
+
+    DicomLoaderService.findDicomDataPromise(displaySet, studies).then(
+      data => {
+        const byteArray = new Uint8Array(data);
+        this.setState({
+          byteArray: byteArray,
+        });
+      },
+      error => {
+        this.setState({
+          error,
+        });
+
+        throw new Error(error);
+      }
+    );
+  }
+
+    
   render() {
     const {
       viewportData,
@@ -35,16 +60,16 @@ class OHIFDicomECGViewport extends Component {
       viewportIndex,
       activeViewportIndex,
     } = this.props;
-    const { error, rawEcg } = this.state;
+    const { byteArray, error } = this.state;
     const { id, init, destroy } = OHIFDicomECGViewport;
     const pluginProps = { id, init, destroy };
 
     //Cargo la vista:
     return (
       <OHIFComponentPlugin {...pluginProps}>
-        {!error && (
+        {this.state.byteArray && (
           <DicomECGViewport
-            rawEcg={rawEcg}
+            byteArray={byteArray}
             viewportData={viewportData}
             setViewportActive={setViewportActive}
             viewportIndex={viewportIndex}
