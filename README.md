@@ -11,11 +11,7 @@ Currently it works:</br>
 </ul>
 
 <h3>Installation</h3>
-<ol>
-  <li>Add files on @ohif/extensions</li>
-  <li>Import OHIFDicomECGExtension from '@ohif/extension-dicom-ecg'; in @ohif/platform/viewer/src/index.js</li>
-  <li>Finally in dependencies add "c3": "^0.7.20" in package.json OHIF project, and update whit yarn install</li>
-</ol>
+<a href="https://github.com/ArturRod/dicom-ecg/blob/main/INSTALLATION.md"><strong>Installation Gide</strong></a> |
 
 <h3>Results</h3>
 <img src="https://user-images.githubusercontent.com/86238895/179733736-843699c2-9527-4a68-8e3f-bc841bcd1346.png" />
