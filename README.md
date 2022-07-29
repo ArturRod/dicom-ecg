@@ -13,4 +13,4 @@ Currently it works:</br>
 <a href="https://github.com/ArturRod/dicom-ecg/blob/main/INSTALLATION.md"><strong>Installation Guide</strong></a>
 
 <h3>Results</h3>
-<img src="https://user-images.githubusercontent.com/86238895/179733736-843699c2-9527-4a68-8e3f-bc841bcd1346.png" />
+<img src="https://user-images.githubusercontent.com/86238895/181749060-27ff0696-a090-41db-84dd-9fa3bd7dfd73.png" />
