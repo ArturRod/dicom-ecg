@@ -31,26 +31,42 @@ class OHIFDicomECGViewport extends Component {
     console.log('DicomECGViewport destroy()');
   }
 
-  //Load byteArray:
-  componentDidMount() {
-    const { displaySet, studies } = this.props.viewportData;
-
-    DicomLoaderService.findDicomDataPromise(displaySet, studies).then(
-      data => {
-        const byteArray = new Uint8Array(data);
-        this.setState({
-          byteArray: byteArray,
-        });
-      },
-      error => {
-        this.setState({
-          error,
-        });
-
-        throw new Error(error);
-      }
-    );
-  }
+    //Load byteArray:
+    componentDidMount() {
+      const { displaySet, studies } = this.props.viewportData;
+  
+      //Load local:
+      DicomLoaderService.findDicomDataPromise(displaySet, studies).then(
+        data => {
+          const byteArray = new Uint8Array(data);
+          this.setState({
+            byteArray: byteArray,
+          });
+        },
+        error => {
+          //Load from server request:
+          var oReq = new XMLHttpRequest();
+          oReq.open('get', this.props.viewportData.displaySet.wadoUri, true);
+          oReq.responseType = 'arraybuffer';
+          oReq.onreadystatechange = () => {
+            if (oReq.readyState === 4) {
+              if (oReq.status == 200) {
+                const byteArrayReq = new Uint8Array(oReq.response);
+                this.setState({
+                  byteArray: byteArrayReq,
+                });
+              } else {
+                this.setState({
+                  error: true,
+                });
+                throw new Error(error);
+              }
+            }
+          };
+          oReq.send();
+        }
+      );
+    }
 
     
   render() {
