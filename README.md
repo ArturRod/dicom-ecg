@@ -14,3 +14,5 @@ Currently it works:</br>
 
 <h3>Results</h3>
 <img src="https://user-images.githubusercontent.com/86238895/181749060-27ff0696-a090-41db-84dd-9fa3bd7dfd73.png" />
+<h3>Features</h3>
+Generate the graph instead of using the c3 library (since it takes time to load), generate a canvas with the most personalized graph and actions such as scrolling or others.
