@@ -11,7 +11,7 @@
           OHIFDicomECGExtension, //Add
       ],
  ```
-- Add the extension in OHIF-Viewer (platform/package.json) add the extension:
+- Add the extension in OHIF-Viewer (platform/viewer/package.json) add the extension:
 ```js
   "dependencies": { 
       ...
