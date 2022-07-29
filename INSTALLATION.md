@@ -25,6 +25,6 @@
       "c3": "^0.7.20" //Add
   },
 ```
-- Finally update whit yarn install.
+- Finally update whit yarn install (OHIF-Viewer).
 
 
