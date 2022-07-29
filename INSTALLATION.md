@@ -18,7 +18,7 @@
       "@ohif/extension-dicom-ecg": "^1.0.2", //Add
   }
 ```
-- Add c3 dependency in OHIF-Viewer (package.json):
+- Add c3 dependency in OHIF-Viewe, Is the package.json of the project (package.json):
 ```js
   "dependencies": {
       ...
