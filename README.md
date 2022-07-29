@@ -10,7 +10,7 @@ Currently it works:</br>
   <li><strong>HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1', --> NO SUPPORT</strong></li>
 </ul>
 
-<h3 href="https://github.com/ArturRod/dicom-ecg/blob/main/INSTALLATION.md">Installation Guide</h3>
+<a href="https://github.com/ArturRod/dicom-ecg/blob/main/INSTALLATION.md"><strong>RInstallation Guide</strong></a>
 
 <h3>Results</h3>
 <img src="https://user-images.githubusercontent.com/86238895/179733736-843699c2-9527-4a68-8e3f-bc841bcd1346.png" />
