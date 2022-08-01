@@ -7,7 +7,7 @@ Currently it works:</br>
   <li><strong>Sop12LeadECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.1', --> YES</strong></li>
   <li><strong>GeneralECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.2', --> YES</strong></li>
   <li><strong>AmbulatoryECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.3', --> NO SUPPORT</strong></li>
-  <li><strong>HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1', --> NO SUPPORT</strong></li>
+  <li><strong>HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1', --> YES</strong></li>
 </ul>
 
 <a href="https://github.com/ArturRod/dicom-ecg/blob/main/INSTALLATION.md"><strong>Installation Guide</strong></a>
@@ -17,6 +17,6 @@ Currently it works:</br>
 
 <h3>Features</h3>
 Generate the graph instead of using the c3 library (since it takes time to load), generate a canvas with the most personalized graph and actions such as scrolling or others.
-
+Calibrate Sop12LeadECGWaveformStorage and GeneralECGWaveformStorage to make it look good.
 <a href="https://github.com/OHIF/Viewers/pull/2854"><strong>OHIF VIEWER - ECG</strong></a>
 
