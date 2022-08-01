@@ -34,20 +34,22 @@ class OHIFDicomECGViewport extends Component {
 
   //On udapte element:
   componentDidUpdate(prevProps) {
-    if (this.state.pathname == '/local') {
-      const { displaySet } = this.props.viewportData;
-      const prevDisplaySet = prevProps.viewportData.displaySet;
+    const { displaySet } = this.props.viewportData;
+    const prevDisplaySet = prevProps.viewportData.displaySet;
 
-      if (
-        displaySet.displaySetInstanceUID !==
-          prevDisplaySet.displaySetInstanceUID ||
-        displaySet.SOPInstanceUID !== prevDisplaySet.SOPInstanceUID
-      ) {
-        this.setState({
-          byteArray: null,
-        });
-        //Change data:
+    if (
+      displaySet.displaySetInstanceUID !==
+        prevDisplaySet.displaySetInstanceUID ||
+      displaySet.SOPInstanceUID !== prevDisplaySet.SOPInstanceUID
+    ) {
+      this.setState({
+        byteArray: null,
+      });
+      //Change data:
+      if (this.state.pathname == '/local') {
         this.loadLocalByteArray();
+      } else {
+        this.loadServerByteArray();
       }
     }
   }
