@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.0.4](https://github.com/ArturRod/dicom-ecg) (2022-06-27)
 
-**Note:** Code optimization and separation of methods for the organization and generation of the ECG drawing.
+**Note:** Code optimization and separation of methods for the organization and generation of the ECG drawing. The structure is prepared to display user data and view for tools.
 
 ## [1.0.3](https://github.com/ArturRod/dicom-ecg) (2022-06-27)
 
