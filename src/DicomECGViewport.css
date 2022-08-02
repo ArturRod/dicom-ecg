@@ -209,3 +209,49 @@ path.domain {
     transform: rotate(360deg);
   }
 }
+
+/*Table Data Study*/
+.wavedata {
+  height: auto;
+  background: #F9F8F2;
+  width: 100%;
+  border-bottom: 2px solid #000000;
+  display: table;
+	padding: 10px;
+}
+
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.divTableCell i{
+  font-weight: normal;
+}
+
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTableCell .i{
+  font-weight: normal;
+}
+
