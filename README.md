@@ -17,7 +17,11 @@ Currently it works:</br>
 - Video: https://user-images.githubusercontent.com/86238895/181758822-2a971043-1213-43dc-91cc-485038f73953.mp4
 
 <h3>Features</h3>
-Generate the graph instead of using the c3 library (since it takes time to load), generate a canvas with the most personalized graph and actions such as scrolling or others.
+<ul>
+  <li><strong>Generate the graph instead of using the c3 library (since it takes time to load), generate a canvas with the most personalized graph and actions such as scrolling or others.
 Calibrate Sop12LeadECGWaveformStorage and GeneralECGWaveformStorage to make it look good.
 <a href="https://github.com/OHIF/Viewers/pull/2854"><strong>OHIF VIEWER - ECG</strong></a>
+</strong></li>
+  <li><strong>Create npm repository/library. In process. ✅</strong></li>
+</ul>
 
