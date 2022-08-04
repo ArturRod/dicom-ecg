@@ -1,6 +1,5 @@
 <h1>@ohif/extension-dicom-ecg</h1>
 Extension to view electrocardiograms at https://github.com/OHIF Viewer.</br>
-Thanks to the author https://github.com/jap1968 in his project https://github.com/jap1968/dcm-waveform since it is an adaptation of what has been done.</br>
 Tested in OHIF version 4.12.25 onwards</br>
 Currently it works:</br>
 <ul>
@@ -18,10 +17,5 @@ Currently it works:</br>
 
 <h3>Features</h3>
 <ul>
-  <li><strong>Generate the graph instead of using the c3 library (since it takes time to load), generate a canvas with the most personalized graph and actions such as scrolling or others.
-Calibrate Sop12LeadECGWaveformStorage and GeneralECGWaveformStorage to make it look good.
-<a href="https://github.com/OHIF/Viewers/pull/2854"><strong>OHIF VIEWER - ECG</strong></a>
-</strong></li>
-  <li><strong>Create npm repository/library ✅ (https://www.npmjs.com/package/ecg-dicom-web-viewer)</strong></li>
+  <li><strong>Create npm repository/library ✅ (https://www.npmjs.com/package/ecg-dicom-web-viewer) - Complete </strong></li>
 </ul>
-
