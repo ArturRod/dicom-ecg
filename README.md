@@ -22,6 +22,6 @@ Currently it works:</br>
 Calibrate Sop12LeadECGWaveformStorage and GeneralECGWaveformStorage to make it look good.
 <a href="https://github.com/OHIF/Viewers/pull/2854"><strong>OHIF VIEWER - ECG</strong></a>
 </strong></li>
-  <li><strong>Create npm repository/library. In process. ✅</strong></li>
+  <li><strong>Create npm repository/library ✅ (https://www.npmjs.com/package/ecg-dicom-web-viewer)</strong></li>
 </ul>
 
