@@ -1,5 +1,5 @@
 <h1>@ohif/extension-dicom-ecg</h1>
-Extension to view electrocardiograms at https://github.com/OHIF Viewer.</br>
+This extension implements the project(https://github.com/ArturRod/ecg-dicom-web-viewer) in the view for OHIF, thus being able to load ECG in OHIF Viewer (https://github.com/OHIF/Viewers).</br>
 Tested in OHIF version 4.12.25 onwards.</br>
 Currently it works:</br>
 <ul>
