@@ -1,6 +1,6 @@
 <h1>@ohif/extension-dicom-ecg</h1>
 Extension to view electrocardiograms at https://github.com/OHIF Viewer.</br>
-Tested in OHIF version 4.12.25 onwards</br>
+Tested in OHIF version 4.12.25 onwards.</br>
 Currently it works:</br>
 <ul>
   <li><strong>Sop12LeadECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.1', --> YES</strong></li>
