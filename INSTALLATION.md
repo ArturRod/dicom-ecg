@@ -15,15 +15,8 @@
 ```js
   "dependencies": { 
       ...
-      "@ohif/extension-dicom-ecg": "^1.0.2", //Add
+      "@ohif/extension-dicom-ecg": "^1.0.X", //Add
   }
-```
-- Add c3 dependency in OHIF-Viewe, Is the package.json of the project (package.json):
-```js
-  "dependencies": {
-      ...
-      "c3": "^0.7.20" //Add
-  },
 ```
 - Finally update whit yarn install (OHIF-Viewer).
 
