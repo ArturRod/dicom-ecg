@@ -1,7 +1,7 @@
-import React, { Component, createRef } from 'react';
-import PropTypes from 'prop-types';
-import TypedArrayProp from './TypedArrayProp';
-import { DicomECGViewer } from 'ecg-dicom-web-viewer';
+import React, { Component, createRef } from "react";
+import PropTypes from "prop-types";
+import TypedArrayProp from "./TypedArrayProp";
+import { DicomECGViewer } from "ecg-dicom-web-viewer";
 
 class DicomECGViewport extends Component {
   constructor(props) {
@@ -46,9 +46,12 @@ class DicomECGViewport extends Component {
       setViewportActive(viewportIndex);
     }
 
-    this.setState(state => ({ ...state }));
+    this.setState((state) => ({ ...state }));
     if (!this.props.useNative) {
-      this.setState(state => ({ ...state }), () => this.loadInstance());
+      this.setState(
+        (state) => ({ ...state }),
+        () => this.loadInstance()
+      );
     }
   }
 
@@ -61,16 +64,19 @@ class DicomECGViewport extends Component {
         prevDisplaySet.displaySetInstanceUID ||
       displaySet.SOPInstanceUID !== prevDisplaySet.SOPInstanceUID
     ) {
-      this.setState(state => ({ ...state }), () => this.loadInstance());
+      this.setState(
+        (state) => ({ ...state }),
+        () => this.loadInstance()
+      );
     }
   }
 
   render() {
     const style = {
-      height: '100%',
-      background: 'white',
+      height: "100%",
+      background: "white",
     };
-    this.divView = 'viewECG' + this.props.viewportIndex;
+    this.divView = "viewECG" + this.props.viewportIndex;
     return <div id={this.divView} style={style}></div>;
   }
 
@@ -78,30 +84,13 @@ class DicomECGViewport extends Component {
    * Load data:
    */
   loadInstance() {
-    //User data display:
-    let name = this.props.viewportData.studies[0].PatientName;
-    let sex = this.props.viewportData.studies[0].PatientSex;
-    let date = this.props.viewportData.studies[0].StudyDate;
-    let patientID = this.props.viewportData.studies[0].PatientID;
-    let desciption = this.props.viewportData.studies[0].StudyDescription;
-    let birth = this.props.viewportData.studies[0].PatientBirthDate;
-    let userData = {
-      NAME: name,
-      SEX: sex,
-      DATE: date,
-      PATIENT_ID: patientID,
-      DESCRIPTION: desciption,
-      BIRTH: birth,
-    };
-
     //Load view:
     let viewer = new DicomECGViewer(
       this.props.byteArray,
       this.divView,
-      userData,
       this.props.viewportIndex
     );
-    viewer.createView();
+    viewer.loadCanvas();
   }
 }
 
