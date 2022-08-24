@@ -15,7 +15,7 @@
 ```js
   "dependencies": { 
       ...
-      "@ohif/extension-dicom-ecg": "^1.0.X", //Add
+      "@ohif/extension-dicom-ecg": "^X.X.X", //Add
   }
 ```
 - Finally update whit yarn install (OHIF-Viewer).
