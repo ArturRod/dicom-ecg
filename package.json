@@ -1,6 +1,6 @@
 {
   "name": "@ohif/extension-dicom-ecg",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "OHIF extension for Dicom ECG",
   "author": "Arturo Rodrigo (https://github.com/ArturRod)",
   "license": "MIT",
@@ -36,6 +36,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "ecg-dicom-web-viewer": "^2.0.0"
+    "ecg-dicom-web-viewer": "^2.0.4"
   }
 }

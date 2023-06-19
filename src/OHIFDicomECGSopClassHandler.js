@@ -6,6 +6,7 @@ const SOP_CLASS_UIDS = {
   GeneralECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.2',
   AmbulatoryECGWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.1.3',
   HemodynamicWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1',
+  CardiacElectrophysiologyWaveformStorage: '1.2.840.10008.5.1.4.1.1.9.2.1',
 };
 
 const OHIFDicomECGSopClassHandler = {
@@ -16,6 +17,7 @@ const OHIFDicomECGSopClassHandler = {
     SOP_CLASS_UIDS.GeneralECGWaveformStorage,
     SOP_CLASS_UIDS.AmbulatoryECGWaveformStorage,
     SOP_CLASS_UIDS.HemodynamicWaveformStorage,
+    SOP_CLASS_UIDS.CardiacElectrophysiologyWaveformStorage,
   ],
   getDisplaySetFromSeries(series, study, dicomWebClient, authorizationHeaders) {
     const instance = series.getFirstInstance();

@@ -122,7 +122,7 @@ class OHIFDicomECGViewport extends Component {
     const { id, init, destroy } = OHIFDicomECGViewport;
     const pluginProps = { id, init, destroy };
 
-    //Cargo la vista:
+    //Load view:
     return (
       <OHIFComponentPlugin {...pluginProps}>
         {byteArray && (
